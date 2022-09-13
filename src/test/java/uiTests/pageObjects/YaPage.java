@@ -11,12 +11,12 @@ import java.time.Duration;
 
 public class YaPage {
 
-    public WebDriver driver;
+    private WebDriver driver;
     private WebDriverWait wait;
     public YaPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        this.wait = new WebDriverWait(this.driver, Duration.ofSeconds(5));
     }
 
     @FindBy(css = "input.search3__input")
